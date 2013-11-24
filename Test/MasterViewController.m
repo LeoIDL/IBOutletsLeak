@@ -18,14 +18,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // enable labels every 5 seconds
+    [NSTimer scheduledTimerWithTimeInterval: 5.0f
+                                     target: self
+                                   selector:@selector(printAddressForDetailViewController)
+                                   userInfo: nil
+                                    repeats:YES];
+    
 }
 
 
+- (void) printAddressForDetailViewController {
+
+    NSLog(@"Master -> detailViewController: %@", self.detailViewController ) ;
+
+}
+
 - (IBAction)nextButtonPressed:(id)sender {
     
-    DetailViewController * detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     
-    [self.navigationController pushViewController:detailViewController animated:YES] ;
+    [self.navigationController pushViewController: self.detailViewController animated:YES] ;
     
 }
 

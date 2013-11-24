@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController{
+
+    __weak IBOutlet UIButton *buttonA;
+    __weak IBOutlet UIButton *buttonB;
+    __weak IBOutlet UIButton *buttonC;
+    
+}
 
 @end

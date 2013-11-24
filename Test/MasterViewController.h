@@ -11,7 +11,10 @@
 
 @interface MasterViewController : UIViewController{
 
+//    DetailViewController * detailViewController ;
 
 }
+
+@property (nonatomic, retain) DetailViewController * detailViewController ;
 
 @end
